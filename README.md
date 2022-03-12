@@ -20,4 +20,4 @@
 - [ ] 更新最新庫存
 
 
-實作會以 React 搭配 Tailwind CSS，build tool 則使用 Vite。
+實作會以 React 搭配 Tailwind CSS，build tool 則使用 Vite。在介面上基本沿用說明文檔的設計。CTA 按鈕則使用鮮明顏色並使用深色以及淺色區別 hover 及 active 滑鼠與觸碰行為讓使用者得到點擊的反饋（桌機與行動裝置）。
