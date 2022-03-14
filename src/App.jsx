@@ -23,6 +23,14 @@ function App() {
       return;
     }
 
+    if (quantity <= 0) {
+      dispatch({
+        type: "ADD_NOTICE",
+        payload: { id, kind: "FAIL", message: "購買數量不可為 0 或低於 0" },
+      });
+      return;
+    }
+
     setIsLoading(true);
 
     if (count >= quantity) {

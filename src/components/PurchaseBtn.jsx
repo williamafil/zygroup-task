@@ -23,7 +23,7 @@ function PurchaseBtn({ onPurchase, isLoading, count }) {
       <input
         type="number"
         className="w-10 text-center rounded-none rounded-l-sm"
-        min="0"
+        min="1"
         max="5"
         value={quantity}
         onChange={(e) => setQuantity(e.target.value)}
