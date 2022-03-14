@@ -19,9 +19,16 @@ function PurchaseBtn({ onPurchase, isLoading, count }) {
   }
 
   return (
-    <div className="flex">
+    <div className="relative flex">
+      <label
+        htmlFor="quant"
+        className="absolute -top-4 left-0 text-[10px] font-light"
+      >
+        數量
+      </label>
       <input
         type="number"
+        id="quant"
         className="w-10 text-center rounded-none rounded-l-sm"
         min="1"
         max="5"
