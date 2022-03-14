@@ -12,14 +12,23 @@ function App() {
   const [initInventory, setInitInventory] = useState(1500);
   const [isLoading, setIsLoading] = useState(false);
 
-  const purchaseHandler = () => {
+  const purchaseHandler = (quantity) => {
     setIsLoading(true);
     const id = Math.floor(Math.random() * 1000);
-    dispatch({
-      type: "ADD_NOTICE",
-      payload: { id, kind: "SUCCESS", message: "購買成功..." },
-    });
-    setCount((prev) => (prev -= 1));
+
+    if (count >= quantity) {
+      dispatch({
+        type: "ADD_NOTICE",
+        payload: { id, kind: "SUCCESS", message: "購買成功..." },
+      });
+      setCount((prev) => (prev -= quantity));
+    } else {
+      dispatch({
+        type: "ADD_NOTICE",
+        payload: { id, kind: "FAIL", message: "庫存不足，請修改購買數量" },
+      });
+    }
+
     setTimeout(() => setIsLoading(false), 2000);
   };
 
