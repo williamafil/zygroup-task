@@ -8,7 +8,7 @@ import NotificationContainer from "./components/notification/NotificationContain
 
 function App() {
   const { state, dispatch } = useContext(NoticeContext);
-  const [count, setCount] = useState(5);
+  const [count, setCount] = useState(12);
   const [initInventory, setInitInventory] = useState(1500);
   const [isLoading, setIsLoading] = useState(false);
 
