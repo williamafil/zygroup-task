@@ -13,8 +13,17 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   const purchaseHandler = (quantity) => {
-    setIsLoading(true);
     const id = Math.floor(Math.random() * 1000);
+
+    if (quantity > 5) {
+      dispatch({
+        type: "ADD_NOTICE",
+        payload: { id, kind: "FAIL", message: "最大限購 5 台" },
+      });
+      return;
+    }
+
+    setIsLoading(true);
 
     if (count >= quantity) {
       dispatch({
@@ -47,6 +56,7 @@ function App() {
         isLoading={isLoading}
         count={count}
       />
+      <p className="text-xs">*每次限購 5 個</p>
     </div>
   );
 }

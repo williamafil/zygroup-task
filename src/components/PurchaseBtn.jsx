@@ -22,7 +22,7 @@ function PurchaseBtn({ onPurchase, isLoading, count }) {
     <div className="flex">
       <input
         type="number"
-        className="w-10 text-center"
+        className="w-10 text-center rounded-none rounded-l-sm"
         min="0"
         max="5"
         value={quantity}
@@ -31,7 +31,7 @@ function PurchaseBtn({ onPurchase, isLoading, count }) {
       <button
         type="button"
         className={clsx(
-          "w-32 h-10 px-5 py-2 text-white tracking-wider rounded-sm",
+          "w-32 h-10 px-5 py-2 text-white tracking-wider rounded-r-sm",
           "bg-rose-500 hover:bg-rose-600 active:bg-rose-400",
           "flex justify-center items-center",
           isLoading ? "bg-rose-400" : ""

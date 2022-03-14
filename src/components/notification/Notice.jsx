@@ -23,7 +23,7 @@ function Notice({ notice, onRemove }) {
     <article
       className={clsx(
         "relative",
-        "h-8 w-60 bg-blue-200 text-xs tracking-wider rounded-sm flex justify-center items-center",
+        "h-8 w-60 text-xs tracking-wider rounded-sm flex justify-center items-center",
         bgColor(notice.kind)
       )}
     >

@@ -7,7 +7,6 @@ function NotificationContainer() {
   const { state, dispatch } = useContext(NoticeContext);
 
   const removeNoticeHandler = (id) => {
-    console.log("remove notice");
     dispatch({ type: "REMOVE_NOTICE", payload: id });
   };
 
