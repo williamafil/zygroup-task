@@ -11,7 +11,8 @@ function App() {
 
   const purchaseHandler = () => {
     setIsLoading(true);
-    console.log("purchase 1 item");
+    setCount((prev) => (prev -= 1));
+    setTimeout(() => setIsLoading(false), 2000);
   };
 
   return (
@@ -22,7 +23,11 @@ function App() {
       )}
     >
       <Stock count={count} initInventory={initInventory} />
-      <PurchaseBtn onPurchase={purchaseHandler} isLoading={isLoading} />
+      <PurchaseBtn
+        onPurchase={purchaseHandler}
+        isLoading={isLoading}
+        count={count}
+      />
     </div>
   );
 }
