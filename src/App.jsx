@@ -14,9 +14,10 @@ function App() {
 
   const purchaseHandler = () => {
     setIsLoading(true);
+    const id = Math.floor(Math.random() * 1000);
     dispatch({
       type: "ADD_NOTICE",
-      payload: { kind: "SUCCESS", message: "購買成功..." },
+      payload: { id, kind: "SUCCESS", message: "購買成功..." },
     });
     setCount((prev) => (prev -= 1));
     setTimeout(() => setIsLoading(false), 2000);

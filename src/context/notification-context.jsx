@@ -1,10 +1,7 @@
 import { createContext, useReducer } from "react";
 
 const initialState = {
-  notice: [
-    { kind: "SUCCESS", message: "購買成功" },
-    { kind: "FAIL", message: "購買失敗" },
-  ],
+  notice: [],
 };
 
 const noticeReducer = (state, action) => {
@@ -13,6 +10,14 @@ const noticeReducer = (state, action) => {
       return {
         ...state,
         notice: [...state.notice, action.payload],
+      };
+    case "REMOVE_NOTICE":
+      const remaining = state.notice.filter(
+        (notice) => notice.id !== action.payload
+      );
+      return {
+        ...state,
+        notice: remaining,
       };
     default:
       return state;
